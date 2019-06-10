@@ -3,15 +3,12 @@ package de.android.ayrathairullin;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.*;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g3d.*;
 import com.badlogic.gdx.graphics.g3d.attributes.ColorAttribute;
 import com.badlogic.gdx.graphics.g3d.environment.DirectionalLight;
 import com.badlogic.gdx.graphics.g3d.utils.ModelBuilder;
 
 public class Core extends ApplicationAdapter {
-//	SpriteBatch batch;
-//	Texture img;
 	public PerspectiveCamera cam;
 	public Model model;
 	public ModelInstance instance;
@@ -20,8 +17,6 @@ public class Core extends ApplicationAdapter {
 	
 	@Override
 	public void create () {
-//		batch = new SpriteBatch();
-//		img = new Texture("badlogic.jpg");
 		cam = new PerspectiveCamera(67, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		cam.position.set(10, 10, 10);
 		cam.lookAt(0,0,0);
@@ -43,11 +38,7 @@ public class Core extends ApplicationAdapter {
 	@Override
 	public void render () {
 		Gdx.gl.glViewport(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-//		Gdx.gl.glClearColor(1, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
-//		batch.begin();
-//		batch.draw(img, 0, 0);
-//		batch.end();
 
 		modelBatch.begin(cam);
 		modelBatch.render(instance, environment);
@@ -56,7 +47,5 @@ public class Core extends ApplicationAdapter {
 	
 	@Override
 	public void dispose () {
-//		batch.dispose();
-//		img.dispose();
 	}
 }
